@@ -1,0 +1,41 @@
+
+
+:root {
+    --borderColor:white;
+}
+
+.border-radius {
+    position: relative;
+   
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.border-radius::before,
+.border-radius::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: .3s ease-in-out;
+}
+
+.border-radius::before {
+    top: -5px;
+    left: -5px;
+    border-top: 2px solid var(--borderColor);
+    border-left: 2px solid var(--borderColor);
+}
+
+.border-radius::after {
+    right: -5px;
+    bottom: -5px;
+    border-bottom: 1px solid var(--borderColor);
+    border-right: 1px solid var(--borderColor);
+}
+
+.border-radius:hover::before,
+.border-radius:hover::after {
+    width: calc(100% + 9px);
+    height: calc(100% + 9px);
+}
